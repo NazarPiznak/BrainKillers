@@ -1,0 +1,12 @@
+dc.MoveTo(120, 450);
+dc.AngleArc(100, 450, 20, 0, 360);
+dc.MoveTo(105, 450);
+dc.AngleArc(100, 450, 5, 0, 360);
+dc.MoveTo(160, 450 );
+dc.AngleArc(140, 450, 20, 0, 360);
+dc.MoveTo(145, 450);
+dc.AngleArc(140, 450, 5, 0, 360);
+dc.MoveTo(140, 415);
+dc.AngleArc(120, 415, 20, 0, 360);
+dc.MoveTo(125, 415);
+dc.AngleArc(120, 415, 5, 0, 360);
