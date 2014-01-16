@@ -1,0 +1,126 @@
+double x,deltaX,R;
+	double y;
+	const int height=20, width=30;
+	for (int i = 0, j = 0; ; i++)
+	{
+		dc.Rectangle ( (1000 + width * i - (width / 2 * j)),(330 + height * j), (1030 + width * i - (width / 2 * j)),(350 + height * j));//1
+
+
+		if (i == 6) break;
+		if (i != j) continue;
+		i =-1;
+		j++;
+
+
+	}
+
+	dc.Rectangle (200,445,205,470);
+	dc.Rectangle (180,440,225,445);
+	dc.Rectangle (175,405,180,445);
+	dc.Rectangle (225,405,230,445);
+	dc.MoveTo (178,405);
+	dc.AngleArc (202,390,30,210,122);
+	dc.Rectangle (70,470,1150,480);// підлога
+
+	/*CBrush  black_brush;		 
+	black_brush.CreateSolidBrush ( RGB (0, 0, 0));
+	dc.SelectObject(&black_brush);	*/
+	CPen black_pen;
+	black_pen.CreatePen (PS_SOLID, 2, RGB (0, 0, 0));
+
+
+
+	CPen white_pen;
+	white_pen.CreatePen (PS_SOLID, 2, RGB (255, 255,255));
+
+
+
+	dc.MoveTo(120, 450);
+	dc.AngleArc(100, 450, 20, 0, 360);
+	dc.MoveTo(105, 450);
+	dc.AngleArc(100, 450, 5, 0, 360);
+	dc.MoveTo(160, 450 );
+	dc.AngleArc(140, 450, 20, 0, 360);
+	dc.MoveTo(145, 450);
+	dc.AngleArc(140, 450, 5, 0, 360);
+	dc.MoveTo(140, 415);
+	dc.AngleArc(120, 415, 20, 0, 360);//і
+	dc.MoveTo(125, 415);
+	dc.AngleArc(120, 415, 5, 0, 360);
+	//dc.FloodFill (126,415, WHITE_BRUSH);
+	// кулька попадає в рогатку
+	int prx,pry;
+	prx=120;
+	pry=415;
+	int j=-44;
+	for ( int i=0; i<=88; i++)
+	{
+		Sleep (10);
+		//dc.FloodFill(j+165, j*j/40+367,WHITE_BRUSH);
+		dc.SelectObject(&black_pen);
+		dc.MoveTo(j+185, j*j/40+367);
+		dc.AngleArc(j+165, j*j/40+367, 20, 0, 360);
+		dc.MoveTo(j+170, j*j/40+367);
+		dc.AngleArc(j+165, j*j/40+367, 5, 0, 360);
+
+
+		//if(i!=88)
+		{
+
+			dc.SelectObject(&white_pen);
+			dc.MoveTo(prx+20, pry);
+			dc.AngleArc(prx, pry, 20, 0, 360);
+			dc.AngleArc(prx, pry, 5, 0, 360);
+			prx=j+165;
+			pry=j*j/40+367;
+			if (i<80)
+				j++;
+		}
+	}
+	//від рогатки до піраміди
+	int prx2,pry2;
+	prx2=200;
+	pry2=397;
+	y=397;
+	//x=1000,y=330; x<=1500,y>=200; x=x+deltaX,y=y-deltaY;;
+	double deltaY,prx3,pry3;
+	prx3=1000;
+	pry3=330;
+	int x2=1000, y2=330;
+	for (x=250; x<=1400; x=x++)
+	{
+		y=25000/x+300;
+		Sleep (2);
+		dc.SelectObject(&black_pen);
+		dc.MoveTo(x+20,y);
+		dc.AngleArc(x, y, 20, 0, 360);
+		dc.MoveTo(x+5,y);
+		dc.AngleArc(x, y, 5, 0, 360);
+
+		if (x!=1000)
+		{
+			dc.SelectObject(&white_pen);
+			dc.MoveTo (prx2+20,pry2);
+			dc.AngleArc(prx2, pry2, 20, 0, 360);
+			dc.MoveTo (prx2+5,pry2);
+			dc.AngleArc(prx2, pry2, 5, 0, 360);
+			prx2=x;
+			pry2=y;
+
+		}
+		if (prx2>970)
+		{
+
+
+			dc.SelectObject(&black_pen);
+			dc.Rectangle(x2,y2,x2+30,y2+20);
+
+			dc.SelectObject(&white_pen);
+			dc.Rectangle(prx3,pry3,prx3+30,pry3+20);
+			prx3=x2;
+			pry3=y2;
+			x2++;
+			y2=25000/x2+300;
+		}//анімація верхнього едемента
+	}
+}
