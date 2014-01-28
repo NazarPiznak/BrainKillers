@@ -1,0 +1,14 @@
+if (prx2>970)
+  {
+//анімація верхнього едемента
+
+   dc.SelectObject(&black_pen);
+   dc.Rectangle(x2,y2,x2+30,y2+20);
+
+   dc.SelectObject(&white_pen);
+   dc.Rectangle(prx3,pry3,prx3+30,pry3+20);
+   prx3=x2;
+   pry3=y2;
+   x2++;
+   y2=25000/x2+300;
+  }
