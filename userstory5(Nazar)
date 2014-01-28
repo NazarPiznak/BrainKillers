@@ -1,0 +1,50 @@
+int prx4,pry4;
+	prx4=200;
+	pry4=397;
+	y=397;
+	double prx5,pry5;
+	prx5=1000;
+	pry5=330;
+	for (x=220; x<=550; x++)
+	{
+		y=x*x*x*0.0000004+380;
+		Sleep (2);
+		dc.SelectObject(&black_pen);
+		dc.MoveTo(x+20,y);
+		dc.AngleArc(x, y, 20, 0, 360);
+		dc.MoveTo(x+5,y);
+		dc.AngleArc(x, y, 5, 0, 360);
+
+		
+			dc.SelectObject(&white_pen);
+			dc.MoveTo (prx4+20,pry4);
+			dc.AngleArc(prx4, pry4, 20, 0, 360);
+			dc.MoveTo (prx4+5,pry4);
+			dc.AngleArc(prx4, pry4, 5, 0, 360);
+			prx4=x;
+			pry4=y;
+		
+	}
+
+	for (x=550; x<=950; x++)
+	{
+		y=(1100-x)*(1100-x)*(1100-x)*0.0000005+366;
+		Sleep (2);
+		dc.SelectObject(&black_pen);
+		dc.MoveTo(x+20,y);
+		dc.AngleArc(x, y, 20, 0, 360);
+		dc.MoveTo(x+5,y);
+		dc.AngleArc(x, y, 5, 0, 360);
+
+		
+			dc.SelectObject(&white_pen);
+			dc.MoveTo (prx4+20,pry4);
+			dc.AngleArc(prx4, pry4, 20, 0, 360);
+			dc.MoveTo (prx4+5,pry4);
+			dc.AngleArc(prx4, pry4, 5, 0, 360);
+			prx4=x;
+			pry4=y;
+			dc.AngleArc (950,367.6875,20,0,360);
+			dc.AngleArc (950,367.6875,5,0,360);
+		
+	}
