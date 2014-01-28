@@ -1,0 +1,29 @@
+int deltaX5, x5, y5,prx7,pry7;
+deltaX5=30;
+for (x5=985; x5>=550; x5--)
+{
+	Sleep(2);
+	  y5=x5*0.5-141;
+	dc.SelectObject(&black_pen);
+			dc.Rectangle(x5,y5,x5+30,y5+20);
+			dc.SelectObject(&white_pen);
+			dc.Rectangle(prx5,pry5,prx5+30,pry5+20);
+			prx5=x5;
+			pry5=y5;
+          
+}
+
+for (x5=550; x5>=187; x5--)
+{
+	Sleep(2);
+	  y5=(1100-x5)*0.72-262;
+	dc.SelectObject(&black_pen);
+			dc.Rectangle(x5,y5,x5+30,y5+20);
+          dc.SelectObject(&white_pen);
+			dc.Rectangle(prx5,pry5,prx5+30,pry5+20);
+			prx5=x5;
+			pry5=y5;
+}
+dc.SelectObject(&black_pen);
+dc.Rectangle(187,395.36,217,415.36);
+	}
