@@ -1,0 +1,28 @@
+int prx,pry;
+	prx=120;
+	pry=415;
+	int j=-44;
+	for ( int i=0; i<=88; i++)
+	{
+		Sleep (10);
+		//dc.FloodFill(j+165, j*j/40+367,WHITE_BRUSH);
+		dc.SelectObject(&black_pen);
+		dc.MoveTo(j+185, j*j/40+367);
+		dc.AngleArc(j+165, j*j/40+367, 20, 0, 360);
+		dc.MoveTo(j+170, j*j/40+367);
+		dc.AngleArc(j+165, j*j/40+367, 5, 0, 360);
+
+
+		//if(i!=88)
+		{
+
+			dc.SelectObject(&white_pen);
+			dc.MoveTo(prx+20, pry);
+			dc.AngleArc(prx, pry, 20, 0, 360);
+			dc.AngleArc(prx, pry, 5, 0, 360);
+			prx=j+165;
+			pry=j*j/40+367;
+			if (i<80)
+				j++;
+		}
+	}
