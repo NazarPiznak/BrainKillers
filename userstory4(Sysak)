@@ -1,0 +1,28 @@
+int prx2,pry2;
+	prx2=200;
+	pry2=397;
+	y=397;
+	double prx3,pry3;
+	prx3=1000;
+	pry3=330;
+	int x2=1000, y2=330;
+	for (x=250; x<=1400; x=x++)
+	{
+		y=25000/x+300;
+		Sleep (2);
+		dc.SelectObject(&black_pen);
+		dc.MoveTo(x+20,y);
+		dc.AngleArc(x, y, 20, 0, 360);
+		dc.MoveTo(x+5,y);
+		dc.AngleArc(x, y, 5, 0, 360);
+
+		if (x!=1000)
+		{
+			dc.SelectObject(&white_pen);
+			dc.MoveTo (prx2+20,pry2);
+			dc.AngleArc(prx2, pry2, 20, 0, 360);
+			dc.MoveTo (prx2+5,pry2);
+			dc.AngleArc(prx2, pry2, 5, 0, 360);
+			prx2=x;
+			pry2=y;
+		}
