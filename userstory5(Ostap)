@@ -1,0 +1,28 @@
+// кулька попадає в рогатку
+ int prx6,pry6;
+ prx6=140;
+ pry6=450;
+ int k=-44;
+ for ( int i=0; i<=88; i++)
+ {
+  Sleep (10);
+  //dc.FloodFill(j+165, j*j/40+367,WHITE_BRUSH);
+  dc.SelectObject(&black_pen);
+  dc.MoveTo(k+185, k*k/40+367);
+  dc.AngleArc(k+165, k*k/40+367, 20, 0, 360);
+  dc.MoveTo(k+170, k*k/40+367);
+  dc.AngleArc(k+165, k*k/40+367, 5, 0, 360);
+
+
+  //if(i!=88)
+  {
+
+   dc.SelectObject(&white_pen);
+   dc.MoveTo(prx6+20, pry6);
+   dc.AngleArc(prx6, pry6, 20, 0, 360);
+   dc.AngleArc(prx6, pry6, 5, 0, 360);
+   prx6=k+165;
+   pry6=k*k/40+367;
+   if (i<80)
+    k++;
+  }
